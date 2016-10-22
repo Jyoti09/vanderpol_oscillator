@@ -1,0 +1,108 @@
+\documentclass[11pt,a4 paper]{report}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage[left=1in, right=1in, top=1in, bottom=1in, includefoot, headheight=10pt]{geometry}
+\usepackage[english]{babel}
+\usepackage[titletoc,toc,page]{appendix}
+\usepackage{setspace}
+\usepackage{float}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Intial portion
+\begin{document}
+\begin{titlepage}
+\begin{center}
+    	\huge{\textsc{Van-der-Pol}} \\
+    	\huge{\textsc{Oscillator}} \\[1.5cm]
+    	
+	\large{\textbf {AE-663 First Project}}\\[15pt]
+	\large{\textbf {by}}\\[8pt]
+    \large{\textbf{Jyoti Dhakal}}\\[8pt]
+	\large{\textbf{153072001}}\\
+    
+	\vspace{1cm}
+	
+
+	Department of Electrical Engineering\\
+	Indian Institute of Technology, Bombay\\
+	Powai, Mumbai - 400 076.\\[0.5cm]
+	\textbf{2016-2017}
+\end{center} 
+\end{titlepage}
+
+\tableofcontents
+\listoffigures
+\onehalfspacing
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{INTRODUCTION}
+\section{Describing Function Analysis}
+The frequency response method is a powerful tool for the analysis and design of the linear control systems. It is based on describing a linear system by acomplex-based valued function, the frequency response. instead of differential equations. The power of he method comes from a number of sorues. First. graphical representtions can be used to failitate analysis and design. Second, physical insights can be used, because the frequency response functions have clear physical meanings. Frequency domain analysis, however can not be direclty applied to nonlinear systems because the frequency response functions (FRF) cannot be defined for nonlinear systems.
+
+\par 
+For some nonlinear systems, an extended version of the frequency response method, called the $\textbf{describing function method}$, can be used to approximately analyze and predict non-linear behavior. Even though it is only an approximation method, the desirable properties it inherits from the frequency response method, and shortage of other systematic tools for nonlinear system analysis, make it an indispensable component of the bag of tools of practicing control engineers. The main use of describing function method is for the prediction of limit cycles in nonlinear systems. 
+
+\chapter{Lienard's equation}
+\par
+We know that a simple harmonic oscillator is given by 
+
+\begin{equation}
+x^{\cdot\cdot}+x=0
+\end{equation}
+
+\par
+But for the non-linear case the damped oscillator equation is given by \cite{book1}
+
+
+Lef \textit{f} and \textit{g} be two continuously differentiable functions on R with \textit{f} and \textit{g} as even and odd function respectively.
+
+Then the second order differential equation of the form \nocite{book2}
+
+\begin{equation}
+x^{ \cdot\cdot }+ f \left( x \right) x^{\cdot} + g\left(x\right) = 0
+\end{equation}
+
+is called the Lienard equation.
+
+\par 
+A lineard system has a unique and stable limit cycle surrounding the origin if it satisfies the following properties:
+
+\begin{itemize}
+ 
+\item[1]
+g(x) $>$ 0 for all x $>$ 0
+\item[2]
+F(x) $<$0 for 0$<$x$<$p and F(x)$>$0 and monotionic for x$>$p
+\end{itemize}
+
+\chapter{Van der Pol Oscillator}
+\section{Phase plot}
+\par 
+Let f(x)=$\epsilon$ (1-$x^{2}$) where $\epsilon$ $>$ 0 and g(x)=x then the system is called Van der Pol oscillator.
+
+Then the differential equation becomes:
+
+\begin{equation}
+x^{ \cdot\cdot }+\epsilon x^{\cdot} \left( x^{2} -1 \right) + x = 0
+\end{equation}
+
+\par The phase plot is given below:
+\begin{figure}[H]
+\centering
+\includegraphics[width=.8\textwidth]{vanderpol_cycle.png}
+\caption{Phase Cycle}
+\end{figure}
+
+\section{Example}
+\par 
+Consider parallel RLC circuit where L $>$ 0 , C $>$ 0 resistive element is an active circuit with v-i characteristic i=h(v).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=.8\textwidth]{vanderpol_input.png}
+\caption{Signal Input}
+\end{figure}
+
+
+\bibliography{source/van}
+\bibliographystyle{ieeetr}
+\end{document}
